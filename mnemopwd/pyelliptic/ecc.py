@@ -185,7 +185,7 @@ class ECC:
         """
         static method, returns the list of all the curves available
         """
-        return OpenSSL.curves.keys()
+        return list(OpenSSL.curves.keys())
 
     def get_curve(self):
         return OpenSSL.get_curve_by_id(self.curve)

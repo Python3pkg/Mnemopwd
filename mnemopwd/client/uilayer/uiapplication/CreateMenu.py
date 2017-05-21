@@ -41,7 +41,7 @@ class CreateMenu(BaseWindow):
         """Create the menu according to block types"""
         # Create the window
         max_len = 0
-        for btype in btypes.values():
+        for btype in list(btypes.values()):
             max_len = max(max_len, len((btype["1"])["name"]))
         BaseWindow.__init__(
             self, parent, len(btypes) + 2, max_len + 5, y, x, menu=True, modal=True)

@@ -77,7 +77,7 @@ class IPConfiguration:
     def found(timer, ip, port):
         """A server has been found"""
         timer.cancel()
-        print('Server found at ' + ip + ':' + str(port))
+        print(('Server found at ' + ip + ':' + str(port)))
         return ip, port
 
     @staticmethod

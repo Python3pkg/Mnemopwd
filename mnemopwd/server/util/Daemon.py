@@ -188,7 +188,7 @@ class Daemon(object):
             s.bind((Configuration.host, Configuration.port))
         except OSError as exc:
             if exc.errno == 48:
-                print("address [%s:%d] already in use" % (Configuration.host, Configuration.port))
+                print(("address [%s:%d] already in use" % (Configuration.host, Configuration.port)))
                 sys.exit(1)
 
     def write_pid(self):

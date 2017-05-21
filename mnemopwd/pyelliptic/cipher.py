@@ -65,7 +65,7 @@ class Cipher:
         """
         static method, returns all ciphers available
         """
-        return OpenSSL.cipher_algo.keys()
+        return list(OpenSSL.cipher_algo.keys())
 
     @staticmethod
     def get_blocksize(ciphername):

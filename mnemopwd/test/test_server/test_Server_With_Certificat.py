@@ -69,7 +69,7 @@ class Test_Server_Client_S0(threading.Thread):
         connect.connect((self.host, self.port))
         
         self.sockname = connect.getsockname()
-        print("Client", self.number, self.sockname, ": connection with the server")
+        print(("Client", self.number, self.sockname, ": connection with the server"))
         return connect
     
     def state_S0(self, connect):
@@ -88,7 +88,7 @@ class Test_Server_Client_S0(threading.Thread):
             self.state_S0(connect)
         finally:
             connect.close()
-            print("Client", self.number, self.sockname, ": disconnection with the server")
+            print(("Client", self.number, self.sockname, ": disconnection with the server"))
 
 # -----------------------------------------------------------------------------
 # Test S1
@@ -146,7 +146,7 @@ class Test_Server_Client_S1_OK(Test_Server_Client_S0):
             self.state_S1C_end(connect)
         finally:
             connect.close()
-            print("Client", self.number, self.sockname, ": disconnection with the server")
+            print(("Client", self.number, self.sockname, ": disconnection with the server"))
 
 
 class Test_Server_Client_S1_KO(Test_Server_Client_S1_OK):
@@ -179,7 +179,7 @@ class Test_Server_Client_S1_KO(Test_Server_Client_S1_OK):
             self.state_S1C_end(connect)
         finally:
             connect.close()
-            print("Client", self.number, self.sockname, ": disconnection with the server")
+            print(("Client", self.number, self.sockname, ": disconnection with the server"))
             print("Use Ctrl+c to finish the test")
 
 # -----------------------------------------------------------------------------
@@ -196,7 +196,7 @@ class Test_ServerTestCase(unittest.TestCase):
         if Path(self.path + '/testcert').exists() :
             Path(self.path + '/testcert').unlink()
         with subprocess.Popen(['openssl', 'req', '-x509',  '-in',  self.requestfile, '-key', self.keyfile, '-out', self.certfile], stdout=subprocess.PIPE) as proc:
-            print(proc.stdout.read())
+            print((proc.stdout.read()))
 
     def test_Server(self):
         Configuration.certfile = self.certfile

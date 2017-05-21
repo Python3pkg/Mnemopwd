@@ -61,9 +61,9 @@ argparser.add_argument('-p', '--port' , type=int, nargs='?', default=62230, \
 
 options = argparser.parse_args()
 
-print("Using port number " + str(options.port))
-print("Taking '" + options.cert + "' for certificat file")
-print("Taking '" + options.key + "' for private key file")
+print(("Using port number " + str(options.port)))
+print(("Taking '" + options.cert + "' for certificat file"))
+print(("Taking '" + options.key + "' for private key file"))
 
 context = ssl.SSLContext(ssl.PROTOCOL_SSLv23)
 context.verify_mode = ssl.CERT_OPTIONAL

@@ -57,7 +57,7 @@ class BruteForceShield:
     def _ip_rehabilitation(self):
         """IP hashtable update"""
         to_rehabilitate = list()
-        for key in self.shield.keys():
+        for key in list(self.shield.keys()):
             counter, start_time = self.shield[key]
             duration = time.time() - start_time
             if duration > BruteForceShield.banishment_period:

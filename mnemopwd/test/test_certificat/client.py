@@ -42,8 +42,8 @@ argparser.add_argument('-p', '--port' , type=int, nargs='?', default=62230,
 
 options = argparser.parse_args()
 
-print("Using port number " + str(options.port))
-print("Taking '" + options.cert + "' for certificat file")
+print(("Using port number " + str(options.port)))
+print(("Taking '" + options.cert + "' for certificat file"))
 
 context = ssl.SSLContext(ssl.PROTOCOL_SSLv23)
 context.verify_mode = ssl.CERT_OPTIONAL
@@ -68,7 +68,7 @@ except Exception as e:
     print(e)
     exit(1)
 
-print(conn.cipher())
+print((conn.cipher()))
 
 cert = conn.getpeercert()
 pprint.pprint(cert)

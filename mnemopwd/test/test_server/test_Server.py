@@ -70,7 +70,7 @@ class Test_Server_Client_S0(threading.Thread):
         self.test.assertEqual(cipher, 'AECDH-AES256-SHA')
         self.test.assertEqual(bits, 256)
         self.sockname = connect.getsockname()
-        print("Client", self.number, self.sockname, ": connection with the server")
+        print(("Client", self.number, self.sockname, ": connection with the server"))
         return connect
     
     def state_S0(self, connect):
@@ -89,7 +89,7 @@ class Test_Server_Client_S0(threading.Thread):
             self.state_S0(connect)
         finally:
             connect.close()
-            print("Client", self.number, self.sockname, ": disconnection with the server")
+            print(("Client", self.number, self.sockname, ": disconnection with the server"))
 
 # -----------------------------------------------------------------------------
 # Test S1
@@ -148,7 +148,7 @@ class Test_Server_Client_S1_OK(Test_Server_Client_S0):
             self.state_S1C_end(connect)
         finally:
             connect.close()
-            print("Client", self.number, self.sockname, ": disconnection with the server")
+            print(("Client", self.number, self.sockname, ": disconnection with the server"))
 
 
 class Test_Server_Client_S1_KO(Test_Server_Client_S1_OK):
@@ -181,7 +181,7 @@ class Test_Server_Client_S1_KO(Test_Server_Client_S1_OK):
             self.state_S1C_end(connect)
         finally:
             connect.close()
-            print("Client", self.number, self.sockname, ": disconnection with the server")
+            print(("Client", self.number, self.sockname, ": disconnection with the server"))
 
 # -----------------------------------------------------------------------------
 # Test S21
@@ -230,7 +230,7 @@ class Test_Server_Client_S21_OK(Test_Server_Client_S1_OK):
             self.state_S21_OK(connect)
         finally:
             connect.close()
-            print("Client", self.number, self.sockname, ": disconnection with the server")
+            print(("Client", self.number, self.sockname, ": disconnection with the server"))
 
 
 class Test_Server_Client_S21_KO_ID(Test_Server_Client_S21_OK):
@@ -261,7 +261,7 @@ class Test_Server_Client_S21_KO_ID(Test_Server_Client_S21_OK):
             self.state_S21_KO(connect)
         finally:
             connect.close()
-            print("Client", self.number, self.sockname, ": disconnection with the server")
+            print(("Client", self.number, self.sockname, ": disconnection with the server"))
 
 
 class Test_Server_Client_S21_KO_COUNT(Test_Server_Client_S21_KO_ID):
@@ -292,7 +292,7 @@ class Test_Server_Client_S21_KO_COUNT(Test_Server_Client_S21_KO_ID):
             self.state_S21_KO(connect)
         finally:
             connect.close()
-            print("Client", self.number, self.sockname, ": disconnection with the server")
+            print(("Client", self.number, self.sockname, ": disconnection with the server"))
 
 # -----------------------------------------------------------------------------
 # Test S22
@@ -343,7 +343,7 @@ class Test_Server_Client_S22_OK(Test_Server_Client_S1_OK):
             self.state_S22_OK(connect)
         finally:
             connect.close()
-            print("Client", self.number, self.sockname, ": disconnection with the server")
+            print(("Client", self.number, self.sockname, ": disconnection with the server"))
 
 
 class Test_Server_Client_S22_KO_ID(Test_Server_Client_S22_OK):
@@ -376,7 +376,7 @@ class Test_Server_Client_S22_KO_ID(Test_Server_Client_S22_OK):
             self.state_S22_KO(connect)
         finally:
             connect.close()
-            print("Client", self.number, self.sockname, ": disconnection with the server")
+            print(("Client", self.number, self.sockname, ": disconnection with the server"))
 
 
 class Test_Server_Client_S22_KO_COUNT(Test_Server_Client_S22_OK):
@@ -409,7 +409,7 @@ class Test_Server_Client_S22_KO_COUNT(Test_Server_Client_S22_OK):
             self.state_S22_KO(connect)
         finally:
             connect.close()
-            print("Client", self.number, self.sockname, ": disconnection with the server")
+            print(("Client", self.number, self.sockname, ": disconnection with the server"))
 
 # -----------------------------------------------------------------------------
 # Test S31
@@ -462,7 +462,7 @@ class Test_Server_Client_S31_OK_SAME_CONFIG(Test_Server_Client_S21_OK):
             self.state_S31_OK(connect, b'1')
         finally:
             connect.close()
-            print("Client", self.number, self.sockname, ": disconnection with the server")
+            print(("Client", self.number, self.sockname, ": disconnection with the server"))
 
 
 class Test_Server_Client_S31_OK_NEW_CONFIG(Test_Server_Client_S31_OK_SAME_CONFIG):
@@ -496,7 +496,7 @@ class Test_Server_Client_S31_OK_NEW_CONFIG(Test_Server_Client_S31_OK_SAME_CONFIG
             self.state_S31_OK(connect, b'2')
         finally:
             connect.close()
-            print("Client", self.number, self.sockname, ": disconnection with the server")
+            print(("Client", self.number, self.sockname, ": disconnection with the server"))
 
 
 class Test_Server_Client_S31_KO(Test_Server_Client_S31_OK_SAME_CONFIG):
@@ -532,7 +532,7 @@ class Test_Server_Client_S31_KO(Test_Server_Client_S31_OK_SAME_CONFIG):
             self.state_S31_KO(connect)
         finally:
             connect.close()
-            print("Client", self.number, self.sockname, ": disconnection with the server")
+            print(("Client", self.number, self.sockname, ": disconnection with the server"))
 
 # -----------------------------------------------------------------------------
 # Test S32
@@ -629,7 +629,7 @@ class Test_Server_Client_S32_OK(Test_Server_Client_S31_OK_SAME_CONFIG):
             self.state_S32_OK(connect)
         finally:
             connect.close()
-            print("Client", self.number, self.sockname, ": disconnection with the server")
+            print(("Client", self.number, self.sockname, ": disconnection with the server"))
 
 # -----------------------------------------------------------------------------
 # Test S33
@@ -681,7 +681,7 @@ class Test_Server_Client_S33_OK(Test_Server_Client_S31_OK_SAME_CONFIG):
             self.state_S33_OK(connect)
         finally:
             connect.close()
-            print("Client", self.number, self.sockname, ": disconnection with the server")
+            print(("Client", self.number, self.sockname, ": disconnection with the server"))
 
 # -----------------------------------------------------------------------------
 # Test S34
@@ -780,7 +780,7 @@ class Test_Server_Client_S34_OK(Test_Server_Client_S31_OK_SAME_CONFIG):
             self.state_S34_OK(connect)
         finally:
             connect.close()
-            print("Client", self.number, self.sockname, ": disconnection with the server")
+            print(("Client", self.number, self.sockname, ": disconnection with the server"))
 
 
 class Test_Server_Client_S34_OK_NEW_CONFIG(Test_Server_Client_S31_OK_NEW_CONFIG):
@@ -877,7 +877,7 @@ class Test_Server_Client_S34_OK_NEW_CONFIG(Test_Server_Client_S31_OK_NEW_CONFIG)
             self.state_S34_OK(connect)
         finally:
             connect.close()
-            print("Client", self.number, self.sockname, ": disconnection with the server")
+            print(("Client", self.number, self.sockname, ": disconnection with the server"))
             print("Use Ctrl+c to finish the test")
 
 # -----------------------------------------------------------------------------
@@ -929,7 +929,7 @@ class Test_Server_Client_S35_OK_1(Test_Server_Client_S31_OK_SAME_CONFIG):
             self.state_S35_OK(connect)
         finally:
             connect.close()
-            print("Client", self.number, self.sockname, ": disconnection with the server")
+            print(("Client", self.number, self.sockname, ": disconnection with the server"))
 
 
 class Test_Server_Client_S35_OK_2(Test_Server_Client_S31_OK_SAME_CONFIG):
@@ -982,7 +982,7 @@ class Test_Server_Client_S35_OK_2(Test_Server_Client_S31_OK_SAME_CONFIG):
             self.state_S35_OK(connect)
         finally:
             connect.close()
-            print("Client", self.number, self.sockname, ": disconnection with the server")
+            print(("Client", self.number, self.sockname, ": disconnection with the server"))
 
 
 class Test_Server_Client_S35_KO(Test_Server_Client_S35_OK_1):
@@ -1020,7 +1020,7 @@ class Test_Server_Client_S35_KO(Test_Server_Client_S35_OK_1):
             self.state_S35_KO(connect)
         finally:
             connect.close()
-            print("Client", self.number, self.sockname, ": disconnection with the server")
+            print(("Client", self.number, self.sockname, ": disconnection with the server"))
 
 
 class Test_Server_Client_S35_OK_NEW_CONFIG(Test_Server_Client_S31_OK_NEW_CONFIG):
@@ -1065,7 +1065,7 @@ class Test_Server_Client_S35_OK_NEW_CONFIG(Test_Server_Client_S31_OK_NEW_CONFIG)
             self.state_S35_OK(connect)
         finally:
             connect.close()
-            print("Client", self.number, self.sockname, ": disconnection with the server")
+            print(("Client", self.number, self.sockname, ": disconnection with the server"))
 
 # -----------------------------------------------------------------------------
 # Test S36
@@ -1113,7 +1113,7 @@ class Test_Server_Client_S36_OK(Test_Server_Client_S31_OK_SAME_CONFIG):
             self.state_S36_OK(connect)
         finally:
             connect.close()
-            print("Client", self.number, self.sockname, ": disconnection with the server")
+            print(("Client", self.number, self.sockname, ": disconnection with the server"))
 
 
 class Test_Server_Client_S36_KO_1(Test_Server_Client_S36_OK):
@@ -1151,7 +1151,7 @@ class Test_Server_Client_S36_KO_1(Test_Server_Client_S36_OK):
             self.state_S36_KO(connect)
         finally:
             connect.close()
-            print("Client", self.number, self.sockname, ": disconnection with the server")
+            print(("Client", self.number, self.sockname, ": disconnection with the server"))
 
 
 class Test_Server_Client_S36_KO_2(Test_Server_Client_S36_KO_1):
@@ -1182,7 +1182,7 @@ class Test_Server_Client_S36_KO_2(Test_Server_Client_S36_KO_1):
             self.state_S36_KO(connect)
         finally:
             connect.close()
-            print("Client", self.number, self.sockname, ": disconnection with the server")
+            print(("Client", self.number, self.sockname, ": disconnection with the server"))
 
 # -----------------------------------------------------------------------------
 # Test S37
@@ -1239,7 +1239,7 @@ class Test_Server_Client_S37_OK(Test_Server_Client_S31_OK_SAME_CONFIG):
             self.state_S37_OK(connect)
         finally:
             connect.close()
-            print("Client", self.number, self.sockname, ": disconnection with the server")
+            print(("Client", self.number, self.sockname, ": disconnection with the server"))
 
 
 class Test_Server_Client_S37_KO_1(Test_Server_Client_S37_OK):
@@ -1277,7 +1277,7 @@ class Test_Server_Client_S37_KO_1(Test_Server_Client_S37_OK):
             self.state_S37_KO(connect)
         finally:
             connect.close()
-            print("Client", self.number, self.sockname, ": disconnection with the server")
+            print(("Client", self.number, self.sockname, ": disconnection with the server"))
 
 
 class Test_Server_Client_S37_KO_2(Test_Server_Client_S37_KO_1):
@@ -1308,7 +1308,7 @@ class Test_Server_Client_S37_KO_2(Test_Server_Client_S37_KO_1):
             self.state_S37_KO(connect)
         finally:
             connect.close()
-            print("Client", self.number, self.sockname, ": disconnection with the server")
+            print(("Client", self.number, self.sockname, ": disconnection with the server"))
 
 # -----------------------------------------------------------------------------
 

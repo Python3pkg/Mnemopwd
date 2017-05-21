@@ -79,7 +79,7 @@ class EditionWindow(TitledOnBorderWindow):
             # Search label max size and get shortcuts list
             shortcuts = []
             max_len = len("Type")  # This label exists always
-            for key, infos in btype.items():
+            for key, infos in list(btype.items()):
                 if int(key) > 1:
                     max_len = max(max_len, len(infos["name"]))
                     shortcuts.append('')
